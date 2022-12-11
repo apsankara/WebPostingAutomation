@@ -12,11 +12,11 @@ public class TC_SupportPage_001 extends BaseClass
 	public void homePage()
 	{
 		HomePage homepage=new HomePage(driver);
-		homepage.homePageURL("https://www.support.xerox.com/");
+		homepage.homePageURL();
 		logger.info("www.support.xerox.com loaded");
 	}
 
-	@Test(priority=1, dependsOnMethods = "homePage",enabled=true)
+	@Test(priority=1,dependsOnMethods ="homePage", enabled=true)
 	public void supportPageModelSearchLinkClick()
 	{
 		SupportPage supportpage=new SupportPage(driver);

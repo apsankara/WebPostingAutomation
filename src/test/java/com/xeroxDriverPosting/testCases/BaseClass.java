@@ -7,7 +7,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import com.xeroxDriverPosting.utilities.ReadConfig;
+
 public class BaseClass {
+	
+	ReadConfig readconfig=new ReadConfig();
 	
 	public static WebDriver driver;
 	public static Logger logger;
@@ -15,14 +19,13 @@ public class BaseClass {
 	@BeforeClass
 	public void setup()
 	{
-		System.setProperty("Webdriver.chrome.driver", System.getProperty("user.dir") +"//Drivers//Chrome_108.0.5359.71//chromedriver.exe");
+		//System.setProperty("Webdriver.chrome.driver", System.getProperty("user.dir") +"//Drivers//Chrome_108.0.5359.71//chromedriver.exe");
+		System.setProperty("Webdriver.chrome.driver",readconfig.getChromePath() );
 		driver=new ChromeDriver();
-		driver.manage().window().maximize();
 		
 		//log object creation and log4j property link and usage
 		logger=Logger.getLogger("DriverPosting");
 		PropertyConfigurator.configure("Log4j.properties");
-		
 	}
 	
 	@AfterClass
