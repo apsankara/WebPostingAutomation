@@ -1,17 +1,18 @@
 package com.xeroxDriverPosting.pageObject;
 
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
+import com.xeroxDriverPosting.testCases.BaseClass;
 import com.xeroxDriverPosting.utilities.ReadConfig;
 
-public class HomePage 
+public class HomePage extends BaseClass
 {
 public WebDriver driver;
 	
-	ReadConfig readconfig=new ReadConfig();
+	
+	ReadConfig readconfig=new ReadConfig();	
 	public String baseURL=readconfig.getApplicationURL();
 	
 	//Constructor, as every page needs a Web driver to find elements
@@ -25,18 +26,17 @@ public WebDriver driver;
 
 	public void homePageURL()
 	{
-		driver.get(baseURL);
+		test=extent.createTest("XeroxSupportPageURL");
+		driver.get(baseURL);	
 		driver.manage().window().maximize();
 		
 		if(driver.getTitle().equalsIgnoreCase("Product Support and Drivers – Xerox"))
 		{
-			System.out.println("Page Title=Product Support and Drivers – Xerox");
-			Assert.assertTrue(true);
+			test.createNode("XeroxHomePageTitleValidation");			
 		}else
 		{
-			driver.navigate().refresh();
-			Assert.assertTrue(false);
-			System.out.println("Home URL Page not Accesible due somthing wrong, so clicked on Referesh to work");
+			test.createNode("XeroxHomePage Not Accesible so Refereshed To WorkAgain");
+			driver.navigate().refresh();									
 		}
 	}
 }

@@ -9,7 +9,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-public class SupportPage {
+import com.xeroxDriverPosting.testCases.BaseClass;
+
+public class SupportPage extends BaseClass {
 
 	public WebDriver driver;
 	
@@ -25,7 +27,7 @@ public class SupportPage {
 	@FindBy(xpath="//*[@id=\"searchbox\"]/div[3]/div[2]/div/div[1]/input")
 	WebElement txt_ModelSearch;
 
-	@FindBy(className="coveo-search-button-svg")
+	@FindBy(className="coveo-search-button-sv")
 	WebElement btn_ModelSearch;
 
 	@FindBy(xpath="//a[contains(text(),'Drivers & Downloads - Xerox Global Print Driver')]")
@@ -37,15 +39,21 @@ public class SupportPage {
 	@FindBy(xpath="//h2[contains(text(),'Xerox Global Print Driver')]")
 	WebElement validate_modelSearchLink;
 
+
 	public void typeModel(String modelName) 
 	{
+		test=extent.createTest("XeroxDriverModelSearchPage");
 		txt_ModelSearch.clear();
+		test.createNode("ModelSearchBar_Clear");
 		txt_ModelSearch.sendKeys(modelName);
+		test.createNode("Serach model " +modelName);
+		
 	}
 
 	public void BtnSearchClick() 
 	{
 		btn_ModelSearch.click();
+		test.createNode("Click on Model SerchBtn");
 	}
 
 	public void ModelSearchLinkClick(String modelLinkName) 
@@ -59,8 +67,10 @@ public class SupportPage {
 			if(modellinks.getText().contains(modelLinkName))
 			{
 				JavascriptExecutor jse = (JavascriptExecutor)driver;
-				jse.executeScript("arguments[0].click()", modellinks);		
+				jse.executeScript("arguments[0].click()", modellinks);	
+				test.createNode("Clcik on the Model Seatch Link" +modellinks);
 				break;
+				
 			}
 		}
 		}catch(Exception ex) {
@@ -74,10 +84,10 @@ public class SupportPage {
 		
 		if(modelText.contains(modelPage))
 		{
-			System.out.println("Model Page Success " + "Expected=" +modelPage +" Actual=" +modelText);
+			test.createNode("Validate the Model Page " +modelPage);
 		}
-		else {
-			System.out.println("Model Page not Success " + "Expected=" +modelPage +" Actual=" +modelPage);
+		else {			
+			test.createNode("Validate the Model Page " +modelPage);
 			driver.navigate().refresh();
 		}
 	}
