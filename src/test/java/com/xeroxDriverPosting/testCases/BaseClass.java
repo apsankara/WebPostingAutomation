@@ -61,8 +61,8 @@ public class BaseClass {
 	{
 		if(result.getStatus()==ITestResult.FAILURE)
 		{
-			test.log(Status.FAIL, "TEST CASE FAILED is" +result.getName());//to add the name in the extent report
-			test.log(Status.FAIL, "TEST CASE FAILED is" +result.getThrowable());
+			test.log(Status.FAIL, "TEST CASE FAILED is " +result.getName());//to add the name in the extent report
+			test.log(Status.FAIL, "TEST CASE FAILED is " +result.getThrowable());
 
 			String screenshotpath=BaseClass.getScreenShot(driver, result.getName());
 
@@ -70,7 +70,7 @@ public class BaseClass {
 		}
 		else if(result.getStatus()==ITestResult.SKIP)
 		{
-			test.log(Status.SKIP, "TEST CASE SKIPPED is" +result.getName());
+			test.log(Status.SKIP, "TEST CASE SKIPPED is " +result.getName());
 		}
 		else if(result.getStatus()==ITestResult.SUCCESS)
 		{

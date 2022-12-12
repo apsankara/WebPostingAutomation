@@ -27,7 +27,7 @@ public class SupportPage extends BaseClass {
 	@FindBy(xpath="//*[@id=\"searchbox\"]/div[3]/div[2]/div/div[1]/input")
 	WebElement txt_ModelSearch;
 
-	@FindBy(className="coveo-search-button-sv")
+	@FindBy(className="coveo-search-button-svg")
 	WebElement btn_ModelSearch;
 
 	@FindBy(xpath="//a[contains(text(),'Drivers & Downloads - Xerox Global Print Driver')]")

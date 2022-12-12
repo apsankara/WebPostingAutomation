@@ -10,7 +10,7 @@ public class TC_SupportPage_001 extends BaseClass
 
 	@Test(priority=0, enabled=true)
 	public void homePage()
-	{
+	{		
 		HomePage homepage=new HomePage(driver);
 		homepage.homePageURL();
 		logger.info("www.support.xerox.com loaded");
@@ -18,7 +18,7 @@ public class TC_SupportPage_001 extends BaseClass
 
 	@Test(priority=1,dependsOnMethods ="homePage", enabled=true)
 	public void supportPageModelSearchLinkClick()
-	{
+	{	
 		SupportPage supportpage=new SupportPage(driver);
 		
 		supportpage.typeModel("Xerox Global Print Driver");
