@@ -105,7 +105,7 @@ public class BaseClass {
 		//System.setProperty("webdriver.chrome.driver", "C:/SeleniumSetup/chromedriver_win32/chromedriver.exe");
 		//driver=new ChromeDriver();
 		test=extent.createTest("LaunchingBrowser");
-		String name=readconfig.getBrowsername();		
+		String name=readconfig.getBrowserName();		
 		if(name.equals("chrome"))
 		{
 			//System.setProperty("Webdriver.chrome.driver", System.getProperty("user.dir") +"//Drivers//Chrome_108.0.5359.71//chromedriver.exe");

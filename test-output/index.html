@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,12 +103,17 @@
                     <div class="method-list-content passed suite-Driver_Posting">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Driver_Posting" title="com.xeroxDriverPosting.testCases.TC_SupportPage_001" class="method navigator-link" hash-for-method="homePage">homePage</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Driver_Posting" title="com.xeroxDriverPosting.testCases.TC1_Xerox_ModelName_Page_001" class="method navigator-link" hash-for-method="homePage">homePage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Driver_Posting" title="com.xeroxDriverPosting.testCases.TC_SupportPage_001" class="method navigator-link" hash-for-method="supportPageModelSearchLinkClick">supportPageModelSearchLinkClick</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Driver_Posting" title="com.xeroxDriverPosting.testCases.TC1_Xerox_ModelName_Page_001" class="method navigator-link" hash-for-method="modelPageValidation">modelPageValidation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Driver_Posting" title="com.xeroxDriverPosting.testCases.TC1_Xerox_ModelName_Page_001" class="method navigator-link" hash-for-method="supportPageModelSearchLinkClick">supportPageModelSearchLinkClick</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Driver_Posting -->
@@ -126,7 +131,7 @@
           <div class="suite-Driver_Posting-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.xeroxDriverPosting.testCases.TC_SupportPage_001</span>
+              <span class="class-name">com.xeroxDriverPosting.testCases.TC1_Xerox_ModelName_Page_001</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -134,6 +139,13 @@
                   <a name="homePage">
                   </a> <!-- homePage -->
                   <span class="method-name">homePage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="modelPageValidation">
+                  </a> <!-- modelPageValidation -->
+                  <span class="method-name">modelPageValidation</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -156,9 +168,8 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Driver Posting&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Global Print Driver&quot;&gt;
-    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.xeroxDriverPosting.testCases.TC_SupportPage_001&quot;/&gt;
+      &lt;class name=&quot;com.xeroxDriverPosting.testCases.TC1_Xerox_ModelName_Page_001&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Global Print Driver --&gt;
 &lt;/suite&gt; &lt;!-- Driver Posting --&gt;
@@ -198,20 +209,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'supportPageModelSearchLinkClick')
-data.setCell(0, 2, 'com.xeroxDriverPosting.testCases.TC_SupportPage_001')
-data.setCell(0, 3, 36049);
+data.setCell(0, 2, 'com.xeroxDriverPosting.testCases.TC1_Xerox_ModelName_Page_001')
+data.setCell(0, 3, 28859);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'homePage')
-data.setCell(1, 2, 'com.xeroxDriverPosting.testCases.TC_SupportPage_001')
-data.setCell(1, 3, 10280);
+data.setCell(1, 2, 'com.xeroxDriverPosting.testCases.TC1_Xerox_ModelName_Page_001')
+data.setCell(1, 3, 16111);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'modelPageValidation')
+data.setCell(2, 2, 'com.xeroxDriverPosting.testCases.TC1_Xerox_ModelName_Page_001')
+data.setCell(2, 3, 142);
 window.suiteTableData['Driver_Posting']= { tableData: data, tableDiv: 'times-div-Driver_Posting'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 46 seconds</span>
+              <span class="suite-total-time">Total running time: 45 seconds</span>
               <div id="times-div-Driver_Posting">
               </div> <!-- times-div-Driver_Posting -->
             </div> <!-- times-div -->
@@ -237,22 +252,42 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.xeroxDriverPosting.testCases.TC_SupportPage_001</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">setup(chrome)</span>
+              <div class="chronological-class-name">com.xeroxDriverPosting.testCases.TC1_Xerox_ModelName_Page_001</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">reportSetup</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-class before">
+                <span class="method-name">browserSetup</span>
+                <span class="method-start">485 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">homePage</span>
-                <span class="method-start">17702 ms</span>
+                <span class="method-start">4313 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportTearDown([TestResult name=homePage status=SUCCESS method=TC1_Xerox_ModelName_Page_001.homePage()[pri:0, insta...)</span>
+                <span class="method-start">20430 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">supportPageModelSearchLinkClick</span>
-                <span class="method-start">27988 ms</span>
+                <span class="method-start">20444 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportTearDown([TestResult name=supportPageModelSearchLinkClick status=SUCCESS method=TC1_Xerox_ModelName_Page_001....)</span>
+                <span class="method-start">49309 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">modelPageValidation</span>
+                <span class="method-start">49312 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportTearDown([TestResult name=modelPageValidation status=SUCCESS method=TC1_Xerox_ModelName_Page_001.modelPageVal...)</span>
+                <span class="method-start">49458 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-class after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">64040 ms</span>
+                <span class="method-name">browserTearDown</span>
+                <span class="method-start">49460 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

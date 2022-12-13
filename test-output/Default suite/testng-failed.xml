@@ -3,16 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.xeroxDriverPosting.testCases.TC_SupportPage_001">
+      <class name="com.xeroxDriverPosting.testCases.TC1_Xerox_ModelName_Page_001">
         <methods>
           <include name="browserTearDown"/>
           <include name="supportPageModelSearchLinkClick"/>
+          <include name="modelPageValidation"/>
           <include name="reportSetup"/>
           <include name="browserSetup"/>
           <include name="reportTearDown"/>
           <include name="homePage"/>
         </methods>
-      </class> <!-- com.xeroxDriverPosting.testCases.TC_SupportPage_001 -->
+      </class> <!-- com.xeroxDriverPosting.testCases.TC1_Xerox_ModelName_Page_001 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

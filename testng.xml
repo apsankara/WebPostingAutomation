@@ -3,7 +3,7 @@
 <suite name="Driver Posting">
   <test thread-count="5" name="Global Print Driver">
     <classes>
-      <class name="com.xeroxDriverPosting.testCases.TC_SupportPage_001"/>
+      <class name="com.xeroxDriverPosting.testCases.TC1_Xerox_ModelName_Page_001"/>
     </classes>
   </test> <!-- Global Print Driver -->
 </suite> <!-- Driver Posting -->

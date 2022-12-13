@@ -10,11 +10,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import com.xeroxDriverPosting.testCases.BaseClass;
+import com.xeroxDriverPosting.utilities.ReadConfig;
+import com.xeroxDriverPosting.utilities.WaitHelper;
 
 public class SupportPage extends BaseClass {
 
 	public WebDriver driver;
-	
+	WaitHelper waithelper;
 	//Constructor, as every page needs a Web driver to find elements
 	public SupportPage(WebDriver driver)
 	{
@@ -22,8 +24,9 @@ public class SupportPage extends BaseClass {
 		PageFactory.initElements(driver, this);
 		AjaxElementLocatorFactory factory= new AjaxElementLocatorFactory(driver,30);
 		PageFactory.initElements(factory, this);
+		waithelper=new WaitHelper(driver);
 	}
-	
+
 	@FindBy(xpath="//*[@id=\"searchbox\"]/div[3]/div[2]/div/div[1]/input")
 	WebElement txt_ModelSearch;
 
@@ -32,63 +35,63 @@ public class SupportPage extends BaseClass {
 
 	@FindBy(xpath="//a[contains(text(),'Drivers & Downloads - Xerox Global Print Driver')]")
 	WebElement model_SearchLink;
-	
+
 	@FindBy(xpath="//div[@class='coveo-result-list-container coveo-list-layout-container']//a")
 	List<WebElement> ModelSearchlinks;
-	
-	@FindBy(xpath="//h2[contains(text(),'Xerox Global Print Driver')]")
-	WebElement validate_modelSearchLink;
 
+	////h2[contains(text(),'Xerox Global Print Driver')]
+	@FindBy(xpath="//h2[contains(text(),'Xerox Global Print Driver')")
+	WebElement validate_GPDModelSearchLink;
 
-	public void typeModel(String modelName) 
+	@FindBy(xpath="//h2[contains(text(),'VersaLink')]")
+	WebElement validate_VersaLinkModelSearchLink;
+
+	@FindBy(xpath="//h2[contains(text(),'AltaLink')]")
+	WebElement validate_AltaLinkModelSearchLink;
+
+	ReadConfig config=new ReadConfig();
+	String modelname=config.getModelName();
+	String modellinkname=config.clickModelNameLink();
+
+	public void typeModel() 
 	{
 		test=extent.createTest("XeroxDriverModelSearchPage");
+
+		waithelper.WaitForElement(txt_ModelSearch, 50);
 		txt_ModelSearch.clear();
 		test.createNode("ModelSearchBar_Clear");
-		txt_ModelSearch.sendKeys(modelName);
-		test.createNode("Serach model " +modelName);
-		
+		txt_ModelSearch.sendKeys(modelname);
+		test.createNode("Enter Xerox Model " +modelname);	
 	}
 
 	public void BtnSearchClick() 
 	{
+		waithelper.WaitForElement(btn_ModelSearch, 50);
 		btn_ModelSearch.click();
 		test.createNode("Click on Model SerchBtn");
 	}
 
-	public void ModelSearchLinkClick(String modelLinkName) 
+	public void ModelSearchLinkClick() 
 	{
 		try 
 		{
-		for(WebElement modellinks :ModelSearchlinks) 
-		{
-			//System.out.println(modellinks.getText());
-			
-			if(modellinks.getText().contains(modelLinkName))
+			waithelper.WaitForElement(ModelSearchlinks, 50);
+			for(WebElement modellinks :ModelSearchlinks) 
 			{
-				JavascriptExecutor jse = (JavascriptExecutor)driver;
-				jse.executeScript("arguments[0].click()", modellinks);	
-				test.createNode("Clcik on the Model Seatch Link" +modellinks);
-				break;
-				
+				//System.out.println(modellinks.getText());
+				//Drivers & Downloads - Xerox Global Print Driver
+				String xeroxmodellinkname=modellinks.getText();				
+				if(modellinks.getText().contains(modellinkname))
+				{					
+					JavascriptExecutor jse = (JavascriptExecutor)driver;
+					jse.executeScript("arguments[0].click()", modellinks);	
+					test.createNode("Clcik on the Xerox Model Search Link "+xeroxmodellinkname);
+					break;
+				}		
 			}
-		}
-		}catch(Exception ex) {
-			
-		}
-	}
-
-	public void ValidateModelPage(String modelPage) 
-	{
-		String modelText=validate_modelSearchLink.getText();
-		
-		if(modelText.contains(modelPage))
+		}catch(Exception ex) 
 		{
-			test.createNode("Validate the Model Page " +modelPage);
-		}
-		else {			
-			test.createNode("Validate the Model Page " +modelPage);
-			driver.navigate().refresh();
+
 		}
 	}
 }
