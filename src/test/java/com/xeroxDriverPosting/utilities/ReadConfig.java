@@ -50,4 +50,25 @@ public class ReadConfig {
 		String msedgepath=properties.getProperty("MSEdgePath");
 		return msedgepath;
 	}
+	
+	public String getBrowserName()
+	{
+		String browsername=properties.getProperty("browser");
+		return browsername;
+	}
+	
+	
+	public String getModelName()
+	{
+		String modelname=properties.getProperty("Model");
+		return modelname;
+	}
+	
+	public String clickModelNameLink()
+	{
+		String modelLink=properties.getProperty("ModelLink");
+		return modelLink;
+	}
 }
+
+

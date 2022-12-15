@@ -1,0 +1,20 @@
+Model=Xerox B315
+ModelLink=Drivers & Downloads - Xerox B315
+
+Model=Xerox Global Print Driver
+ModelLink=Drivers & Downloads - Xerox Global Print Driver
+
+For Singal Model
+Model=VersaLink C405
+ModelLink=Drivers & Downloads - VersaLink C405
+
+For Multiple Model with Starting Model
+Model=VersaLink C7030
+ModelLink=Drivers & Downloads - VersaLink
+ModelLink=Drivers & Downloads - VersaLink C7020/C7025/C7030
+
+For Multiple Model with Starting Model
+Model=AltaLink C8130
+ModelLink=Drivers & Downloads - AltaLink
+ModelLink=Drivers & Downloads - AltaLink C8130/C8135/C8145/C8155
+
