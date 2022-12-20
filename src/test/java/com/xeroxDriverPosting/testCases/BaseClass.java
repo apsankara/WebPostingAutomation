@@ -111,7 +111,8 @@ public class BaseClass {
 			//System.setProperty("Webdriver.chrome.driver", System.getProperty("user.dir") +"//Drivers//Chrome_108.0.5359.71//chromedriver.exe");
 			System.setProperty("webdriver.chrome.driver",readconfig.getChromePath());
 			//System.setProperty("webdriver.chrome.driver", "C:/SeleniumSetup/chromedriver_win32/chromedriver.exe");
-			driver=new ChromeDriver();	
+			driver=new ChromeDriver();
+			
 		}
 		else if(name.equals("firefox"))
 		{
