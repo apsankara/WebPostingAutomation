@@ -1,5 +1,7 @@
 package com.xeroxDriverPosting.testCases;
 
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
 import com.xeroxDriverPosting.pageObject.HomePage;
@@ -10,7 +12,7 @@ public class TC1_Xerox_ModelName_Page_001 extends BaseClass
 {
 
 	@Test(priority=0, enabled=true)
-	public void homePage()
+	public void homePage() throws IOException
 	{		
 		HomePage homepage=new HomePage(driver);
 		homepage.homePageURL();

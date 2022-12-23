@@ -1,5 +1,7 @@
 package com.xeroxDriverPosting.pageObject;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
@@ -26,7 +28,7 @@ public class HomePage extends BaseClass
 		waithelper=new WaitHelper(driver);
 	}
 
-	public void homePageURL()
+	public void homePageURL() throws IOException
 	{
 		//test=extent.createTest("XeroxSupportPageURL");
 		driver.get(baseURL);	
@@ -34,10 +36,10 @@ public class HomePage extends BaseClass
 
 		if(driver.getTitle().equalsIgnoreCase("Product Support and Drivers – Xerox"))
 		{
-			//test.createNode("XeroxHomePageTitleValidation");			
+			
 		}else
 		{
-			//test.createNode("XeroxHomePage Not Accesible so Refereshed To WorkAgain");
+			getScreenShot(driver,"HomepageValidation");			
 			driver.navigate().refresh();									
 		}
 	}

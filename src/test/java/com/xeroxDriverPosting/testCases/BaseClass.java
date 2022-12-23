@@ -2,8 +2,6 @@ package com.xeroxDriverPosting.testCases;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
@@ -29,15 +27,13 @@ public class BaseClass {
 
 	//Method for taking the screenshots and storing into the file location
 	//https://www.youtube.com/watch?v=tovz1q5Unxs&t=6s
-	public static String getScreenShot(WebDriver driver,String screenshotName) throws IOException
+	public static void getScreenShot(WebDriver driver,String screenshotName) throws IOException
 	{
-		String dateName=new SimpleDateFormat("yyyymmddhhmmss").format(new Date());
 		TakesScreenshot ts=(TakesScreenshot)driver;
 		File source=ts.getScreenshotAs(OutputType.FILE);
-		String destination=System.getProperty("user.dir")+ "/Screenshots/" + screenshotName + dateName +".png";
-		File finalDestination=new File(destination);
-		FileUtils.copyFile(source, finalDestination);
-		return destination;
+		File destination=new File(System.getProperty("user.dir")+ "/Screenshots/" +screenshotName +".png");
+		//File finalDestination=new File(destination);
+		FileUtils.copyFile(source, destination);
 
 	}
 

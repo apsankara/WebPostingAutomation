@@ -55,20 +55,19 @@ public class SupportPage extends BaseClass {
 
 	public void typeModel() 
 	{
-		test=extent.createTest("XeroxDriverModelSearchPage");
+		
 
 		waithelper.WaitForElement(txt_ModelSearch, 50);
-		txt_ModelSearch.clear();
-		test.createNode("ModelSearchBar_Clear");
+		txt_ModelSearch.clear();		
 		txt_ModelSearch.sendKeys(modelname);
-		test.createNode("Enter Xerox Model " +modelname);	
+		
 	}
 
 	public void BtnSearchClick() 
 	{
 		waithelper.WaitForElement(btn_ModelSearch, 50);
 		btn_ModelSearch.click();
-		test.createNode("Click on Model SerchBtn");
+		
 	}
 
 	public void ModelSearchLinkClick() 
@@ -80,12 +79,11 @@ public class SupportPage extends BaseClass {
 			{
 				//System.out.println(modellinks.getText());
 				//Drivers & Downloads - Xerox Global Print Driver
-				String xeroxmodellinkname=modellinks.getText();				
+				//String xeroxmodellinkname=modellinks.getText();				
 				if(modellinks.getText().contains(modellinkname))
 				{					
 					JavascriptExecutor jse = (JavascriptExecutor)driver;
-					jse.executeScript("arguments[0].click()", modellinks);	
-					test.createNode("Clcik on the Xerox Model Search Link "+xeroxmodellinkname);
+					jse.executeScript("arguments[0].click()", modellinks);					
 					break;
 				}		
 			}
