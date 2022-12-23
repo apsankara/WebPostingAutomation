@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Driver Posting">
+
+<listeners>
+	<listener class-name="com.xeroxDriverPosting.utilities.Reporting"> </listener>
+</listeners>
   <test thread-count="5" name="Global Print Driver">
     <classes>
       <class name="com.xeroxDriverPosting.testCases.TC1_Xerox_ModelName_Page_001"/>

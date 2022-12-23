@@ -40,7 +40,7 @@ public class ModelPage_Validation extends BaseClass {
 
 	public void ValidateXeroxModelPage() throws InterruptedException 
 	{
-		test=extent.createTest("XeroxDriverModelPageValidation");
+		//test=extent.createTest("XeroxDriverModelPageValidation");
 
 		waithelper.WaitForElement(validate_XeroxModelSearchLink, 50);
 		String xeroxmodeltext=validate_XeroxModelSearchLink.getText();
@@ -48,42 +48,42 @@ public class ModelPage_Validation extends BaseClass {
 
 		if(xeroxmodeltext.contains(modelname))
 		{
-			test.createNode("Validation Success in the GPD Model Page " +xeroxmodeltext);	
+			//test.createNode("Validation Success in the GPD Model Page " +xeroxmodeltext);	
 
 		}	else {
-			test.createNode("Validation Fail/Not in the GPD Model Page " +xeroxmodeltext);	
+			//test.createNode("Validation Fail/Not in the GPD Model Page " +xeroxmodeltext);	
 		}
 	}
 
 	public void ValidateVersaLinkModelPage() throws InterruptedException 
 	{
-		test=extent.createTest("XeroxDriverModelPageValidation");
+		//test=extent.createTest("XeroxDriverModelPageValidation");
 		waithelper.WaitForElement(validate_VersaLinkModelSearchLink, 50);
 		String versalinkmodeltext=validate_VersaLinkModelSearchLink.getText();
 		//System.out.println(versalinkmodeltext);
 
 		if(versalinkmodeltext.contains("VersaLink"))
 		{
-			test.createNode("Validation Success in the VersaLink Model Page " +versalinkmodeltext);	
+			//test.createNode("Validation Success in the VersaLink Model Page " +versalinkmodeltext);	
 
 		}	else {
-			test.createNode("Validation Fail/Not in the VersaLink Model Page " +versalinkmodeltext);	
+			//test.createNode("Validation Fail/Not in the VersaLink Model Page " +versalinkmodeltext);	
 		}
 	}
 
 	public void ValidateAltaLinkModelPage() throws InterruptedException 
 	{
-		test=extent.createTest("XeroxDriverModelPageValidation");
+		//test=extent.createTest("XeroxDriverModelPageValidation");
 		waithelper.WaitForElement(validate_AltaLinkModelSearchLink, 50);
 		String altalinkmodeltext=validate_AltaLinkModelSearchLink.getText();
 		//System.out.println(altalinkmodeltext);
 
 		if(altalinkmodeltext.contains("AltaLink"))
 		{
-			test.createNode("Validation Success in the AltaLink Model Page " +altalinkmodeltext);	
+			//test.createNode("Validation Success in the AltaLink Model Page " +altalinkmodeltext);	
 
 		}	else {
-			test.createNode("Validation Fail/Not in the AltaLink Model Page " +altalinkmodeltext);	
+			//test.createNode("Validation Fail/Not in the AltaLink Model Page " +altalinkmodeltext);	
 		}
 	}	
 }	

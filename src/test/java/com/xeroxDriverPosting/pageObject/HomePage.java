@@ -28,16 +28,16 @@ public class HomePage extends BaseClass
 
 	public void homePageURL()
 	{
-		test=extent.createTest("XeroxSupportPageURL");
+		//test=extent.createTest("XeroxSupportPageURL");
 		driver.get(baseURL);	
 		driver.manage().window().maximize();
 
 		if(driver.getTitle().equalsIgnoreCase("Product Support and Drivers – Xerox"))
 		{
-			test.createNode("XeroxHomePageTitleValidation");			
+			//test.createNode("XeroxHomePageTitleValidation");			
 		}else
 		{
-			test.createNode("XeroxHomePage Not Accesible so Refereshed To WorkAgain");
+			//test.createNode("XeroxHomePage Not Accesible so Refereshed To WorkAgain");
 			driver.navigate().refresh();									
 		}
 	}
