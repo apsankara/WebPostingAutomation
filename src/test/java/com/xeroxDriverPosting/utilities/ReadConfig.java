@@ -69,6 +69,74 @@ public class ReadConfig {
 		String modelLink=properties.getProperty("ModelLink");
 		return modelLink;
 	}
+	
+	public String getdriverVersion()
+	{
+		String driverversion=properties.getProperty("DriverVersion");
+		return driverversion;
+	}
+	
+	public String getreleasedDate()
+	{
+		String releasedDate=properties.getProperty("ReleasedDate");
+		return releasedDate;
+	}
+	
+	public String getFileNamePS_x64()
+	{
+		String fileNamePS_x64=properties.getProperty("FileNamePS_x64");
+		return fileNamePS_x64;
+	}
+	
+	public String getfileNamePS_x86()
+	{
+		String fileNamePS_x86=properties.getProperty("FileNamePS_x86");
+		return fileNamePS_x86;
+	}
+	
+	public String getFileNamePCL_x64()
+	{
+		String fileNamePCL_x64=properties.getProperty("FileNamePCL_x64");
+		return fileNamePCL_x64;
+	}
+	
+	public String getSize_PS_x64()
+	{
+		String size_PS_x64=properties.getProperty("Size_PS_x64");
+		return size_PS_x64;
+	}
+	
+	public String getSize_PS_x86()
+	{
+		String Size_PS_x86=properties.getProperty("Size_PS_x86");
+		return Size_PS_x86;
+	}
+	
+	public String getSize_PCL6_x64()
+	{
+		String size_PCL6_x64=properties.getProperty("Size_PCL6_x64");
+		return size_PCL6_x64;
+	}
+	
+	public String getSize_PCL6_x86()
+	{
+		String size_PCL6_x86=properties.getProperty("Size_PCL6_x86");
+		return size_PCL6_x86;
+	}
+	
+	public String getLanguage()
+	{
+		String language=properties.getProperty("Language");
+		return language;
+	}
+	
+	public String getTag()
+	{
+		String tag=properties.getProperty("Tag");
+		return tag;
+	}
+	
+	
 }
 
 

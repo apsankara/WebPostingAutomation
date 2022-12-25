@@ -7,10 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import com.xeroxDriverPosting.testCases.BaseClass;
 import com.xeroxDriverPosting.utilities.WaitHelper;
 
 
-public class GPDTag {
+public class GPDTag extends BaseClass {
 
 	WebDriver driver;
 	WaitHelper waithelper;
@@ -27,6 +28,7 @@ public class GPDTag {
 	}
 
 	public void SelectTag(String tag) {
+		//test=extent.createTest("GPD Tag Selection");
 		Select tag1=new Select(select_tag);
 		tag1.selectByVisibleText(tag);
 	}

@@ -8,10 +8,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import com.xeroxDriverPosting.testCases.BaseClass;
 import com.xeroxDriverPosting.utilities.WaitHelper;
 
 
-public class GPDLanguage {
+public class GPDLanguage extends BaseClass {
 
 	WebDriver driver;
 	WaitHelper waithelper;
@@ -29,6 +30,7 @@ public class GPDLanguage {
 		}
 				
 		public void SelectLanguage(String language) {
+			//test=extent.createTest("GPD Language Selection");
 			Select language1=new Select(select_language);
 			language1.selectByVisibleText(language);
 		}

@@ -3,11 +3,11 @@
 <suite name="Driver Posting">
 
 <listeners>
-	<listener class-name="com.xeroxDriverPosting.utilities.Reporting"> </listener>
+	<!--<listener class-name="com.xeroxDriverPosting.utilities.Reporting"> </listener>-->
 </listeners>
   <test thread-count="5" name="Global Print Driver">
     <classes>
-      <class name="com.xeroxDriverPosting.testCases.TC1_Xerox_ModelName_Page_001"/>
+      <class name="com.xeroxDriverPosting.testCases.TC1_GPDModel_PS_x64_Validation"/>
     </classes>
   </test> <!-- Global Print Driver -->
 </suite> <!-- Driver Posting -->

@@ -7,10 +7,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
+import com.xeroxDriverPosting.testCases.BaseClass;
 import com.xeroxDriverPosting.utilities.WaitHelper;
 
 
-public class ApplyFilters {
+public class ApplyFilters extends BaseClass {
 
 	WebDriver driver;
 	com.xeroxDriverPosting.utilities.WaitHelper waithelper;
@@ -28,6 +29,7 @@ public class ApplyFilters {
 	}
 	
 	public void ApplyFilter() {
+		//test=extent.createTest("GPD Apply Filters");
 		apply_filters.click();
 		
 	}

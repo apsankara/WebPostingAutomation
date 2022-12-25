@@ -1,6 +1,5 @@
 package com.xeroxDriverPosting.pageObject;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,11 +13,10 @@ public class PSDriverDetails {
 
 	WebDriver driver;
 	WaitHelper waithelper;
-	// PS path value with clicking the more details link
-	public static By MoreDetails = By.xpath("/html/body/div[4]/div/div[2]/div/div/div/div[2]/div/div[2]/div/div[3]/a");
-	
+	// PS path value without clicking the more details link
 	@FindBy(xpath="/html/body/div[4]/div/div[2]/div/div/div/ul/li[1]")
 	WebElement Released;
+	
 	
 	@FindBy(xpath="/html/body/div[4]/div/div[2]/div/div/div/ul/li[2]")
 	WebElement Version;

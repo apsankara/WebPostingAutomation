@@ -30,17 +30,17 @@ public class HomePage extends BaseClass
 
 	public void homePageURL() throws IOException
 	{
-		//test=extent.createTest("XeroxSupportPageURL");
+		test=extent.createTest("XeroxHomePageURL");
 		driver.get(baseURL);	
 		driver.manage().window().maximize();
 
 		if(driver.getTitle().equalsIgnoreCase("Product Support and Drivers – Xerox"))
 		{
-			
+			test.pass("Support.Xerox.com Launched Successfully");
 		}else
-		{
-			getScreenShot(driver,"HomepageValidation");			
-			driver.navigate().refresh();									
+		{					
+			driver.navigate().refresh();
+			test.warning("Url is not navigated successfully, hence Refereshed page");
 		}
 	}
 }

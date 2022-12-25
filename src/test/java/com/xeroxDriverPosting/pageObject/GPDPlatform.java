@@ -1,5 +1,7 @@
 package com.xeroxDriverPosting.pageObject;
 
+
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,9 +10,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import com.xeroxDriverPosting.testCases.BaseClass;
 import com.xeroxDriverPosting.utilities.WaitHelper;
 
-public class GPDPlatform {
+
+public class GPDPlatform extends BaseClass {
 	public WebDriver driver;
 	com.xeroxDriverPosting.utilities.WaitHelper waithelper;
 	
@@ -28,8 +32,18 @@ public class GPDPlatform {
 		waithelper=new WaitHelper(driver);		
 	}
 	
-	public void SelectPlatform(String platform) {
-		Select os=new Select(select_platform);
+	public void clickPlatform() {
+		select_platform.click();
+	}
+	
+	
+	Select os=new Select(select_platform);
+	public void selectPlatform(String platform) {
 		os.selectByVisibleText(platform);
 	}
+	
+	public String gettext() {
+		return os.getFirstSelectedOption().getText();
+	}
+	
 }
