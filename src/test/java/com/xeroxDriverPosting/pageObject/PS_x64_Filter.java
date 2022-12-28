@@ -9,10 +9,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
+import com.xeroxDriverPosting.testCases.BaseClass;
 import com.xeroxDriverPosting.utilities.WaitHelper;
 
 
-public class PS_x64_Filter {
+public class PS_x64_Filter extends BaseClass{
 
 	WebDriver driver;
 	WaitHelper waithelper;
@@ -38,12 +39,13 @@ public class PS_x64_Filter {
 	
 	public void ValidatePSFilterResult() {
 		String val=Validate_PS_x64_Filter.getText();
+		test=extent.createTest("XeroxDriverPS_x64_Link driver Available");
 		if(val.contentEquals("V3 Xerox Global Print Driver PostScript"))
 		{
-			System.out.println("PS More details name is successful " + "Expected=V3 Xerox Global Print Driver PostScript "+"Actual=" +val);
+			test.pass("Successfully Validated the PS_x64_Link driver name = "+val);
 		}
 		else {
-			System.out.println("PS More details name is not successful " +"Expected=V3 Xerox Global Print Driver PostScript "+"Actual=" +val);	
+			test.fail("Not Validated the PS_x64_Link driver name = "+val);	
 		}
 	}
 }

@@ -29,8 +29,8 @@ public class ApplyFilters extends BaseClass {
 	}
 	
 	public void ApplyFilter() {
-		//test=extent.createTest("GPD Apply Filters");
 		apply_filters.click();
+		test.pass("Successfully Applied Filter Button");
 		
 	}
 	

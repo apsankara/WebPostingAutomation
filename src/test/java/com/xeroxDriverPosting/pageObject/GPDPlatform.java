@@ -34,16 +34,13 @@ public class GPDPlatform extends BaseClass {
 	
 	public void clickPlatform() {
 		select_platform.click();
-	}
+	}	
 	
 	
-	Select os=new Select(select_platform);
 	public void selectPlatform(String platform) {
+		Select os=new Select(select_platform);
 		os.selectByVisibleText(platform);
-	}
-	
-	public String gettext() {
-		return os.getFirstSelectedOption().getText();
+		test.pass("Selected OS is "+platform);
 	}
 	
 }

@@ -33,6 +33,7 @@ public class GPDLanguage extends BaseClass {
 			//test=extent.createTest("GPD Language Selection");
 			Select language1=new Select(select_language);
 			language1.selectByVisibleText(language);
+			test.pass("Selected Language is "+language);
 		}
 
 }

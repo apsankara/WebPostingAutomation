@@ -28,9 +28,9 @@ public class GPDTag extends BaseClass {
 	}
 
 	public void SelectTag(String tag) {
-		//test=extent.createTest("GPD Tag Selection");
 		Select tag1=new Select(select_tag);
 		tag1.selectByVisibleText(tag);
+		test.pass("Selected Tag is "+tag);
 	}
 
 }

@@ -11,6 +11,7 @@ import com.xeroxDriverPosting.pageObject.GPDPlatform;
 import com.xeroxDriverPosting.pageObject.GPDTag;
 import com.xeroxDriverPosting.pageObject.HomePage;
 import com.xeroxDriverPosting.pageObject.ModelPage_Validation;
+import com.xeroxDriverPosting.pageObject.PSMoreDetailsLink_x64;
 import com.xeroxDriverPosting.pageObject.PS_x64_Filter;
 import com.xeroxDriverPosting.pageObject.SupportPage;
 import com.xeroxDriverPosting.utilities.ReadConfig;
@@ -74,46 +75,64 @@ public class TC1_GPDModel_PS_x64_Validation extends BaseClass
 		}
 	}
 	
-	@Test(priority=3,dataProvider="PlatformData")
+	@Test(priority=3,dataProvider="platformData")
 	public void OS_Language_Tag_Selection(String SelectOS) throws IOException
 	{
-		
-		GPDPlatform platform=new GPDPlatform(driver);
-		//platform.clickPlatform();
 		test=extent.createTest("OS_Language_Tag_Selection");
+		GPDPlatform platform=new GPDPlatform(driver);
+		platform.clickPlatform();
 		platform.selectPlatform(SelectOS);
-		test.pass("Successfully captured the OS from Excel :" +SelectOS);
-		String dropdown=platform.gettext();
-		test.pass("Successfully captured the OS form WebPage :" +dropdown);
-		test.pass("Comparison is Successfull");
 		logger.info("Selected OS is "+SelectOS);
+		//test.pass("Successfully captured the OS from Excel "+SelectOS);
 		
 		GPDLanguage language=new GPDLanguage(driver);
 		String configLanguage=readconfig.getLanguage();
 		language.SelectLanguage(configLanguage);
-		test.pass("Selected Language is "+configLanguage);
 		logger.info("Selected Language is "+configLanguage);
+		//test.pass("Selected Language is "+configLanguage);
+		
 		
 		GPDTag tag=new GPDTag(driver);
 		String configTag=readconfig.getTag();
 		tag.SelectTag(configTag);
-		test.pass("Selected Tag is "+configTag);
 		logger.info("Selected Tag is "+configTag);
+		//test.pass("Selected Tag is "+configTag);
 		
 		ApplyFilters filter=new ApplyFilters(driver);
 		filter.ApplyFilter();
-		test.pass("Successfully Applied Filter Button");
 		logger.info("Successfully Applied Filter Button");
+		//test.pass("Successfully Applied Filter Button");
 		
 		PS_x64_Filter ps_x64=new PS_x64_Filter(driver);
-		test=extent.createTest("ValidatePSFilterResult");
 		ps_x64.ValidatePSFilterResult();
-		test.pass("Successfully Validated the PS_x64_Link driver");
 		logger.info("Successfully Validated the PS_x64_Link driver");
 		
+		
+		PSMoreDetailsLink_x64 PS_x64=new PSMoreDetailsLink_x64(driver);
+		String PSname=readconfig.getPSName();
+ 		PS_x64.PSMoreDetailsClick();
+ 		PS_x64.ValidatePSMoreDetails(PSname);
+ 		
+ 		driver.navigate().back();
+ 		
+ 		//String version=readconfig.getdriverVersion();
+ 		
+
+				
+		
 	}
+
 	
-	@DataProvider(name="PlatformData")
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@DataProvider(name="platformData")
 	public String[][] platformData() throws IOException
 	{
 		String path=System.getProperty("user.dir")+"/src/test/java/com/xeroxDriverPosting/testData/TestData.xlsx";

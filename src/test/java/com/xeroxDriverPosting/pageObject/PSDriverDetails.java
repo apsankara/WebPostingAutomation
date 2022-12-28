@@ -17,7 +17,6 @@ public class PSDriverDetails {
 	@FindBy(xpath="/html/body/div[4]/div/div[2]/div/div/div/ul/li[1]")
 	WebElement Released;
 	
-	
 	@FindBy(xpath="/html/body/div[4]/div/div[2]/div/div/div/ul/li[2]")
 	WebElement Version;
 	

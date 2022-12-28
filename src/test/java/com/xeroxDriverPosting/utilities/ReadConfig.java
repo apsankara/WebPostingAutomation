@@ -135,7 +135,11 @@ public class ReadConfig {
 		String tag=properties.getProperty("Tag");
 		return tag;
 	}
-	
+	public String getPSName()
+	{
+		String Psname=properties.getProperty("PSName");
+		return Psname;
+	}
 	
 }
 
