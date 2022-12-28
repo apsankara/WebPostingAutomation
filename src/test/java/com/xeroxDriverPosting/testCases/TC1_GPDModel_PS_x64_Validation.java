@@ -11,8 +11,8 @@ import com.xeroxDriverPosting.pageObject.GPDPlatform;
 import com.xeroxDriverPosting.pageObject.GPDTag;
 import com.xeroxDriverPosting.pageObject.HomePage;
 import com.xeroxDriverPosting.pageObject.ModelPage_Validation;
-import com.xeroxDriverPosting.pageObject.PSMoreDetailsLink_x64;
-import com.xeroxDriverPosting.pageObject.PS_x64_Filter;
+import com.xeroxDriverPosting.pageObject.PSMoreDetailsLink;
+import com.xeroxDriverPosting.pageObject.PS_Link_Name;
 import com.xeroxDriverPosting.pageObject.SupportPage;
 import com.xeroxDriverPosting.utilities.ReadConfig;
 import com.xeroxDriverPosting.utilities.XLUtils;
@@ -43,7 +43,6 @@ public class TC1_GPDModel_PS_x64_Validation extends BaseClass
 
 		supportpage.ModelSearchLinkClick();
 		logger.info("Model SearchLink Clicked Successfully");
-
 	}
 
 	@Test(priority=2,dependsOnMethods="supportPageModelSearchLinkClick", enabled=true)
@@ -90,10 +89,9 @@ public class TC1_GPDModel_PS_x64_Validation extends BaseClass
 		language.SelectLanguage(configLanguage);
 		logger.info("Selected Language is "+configLanguage);
 		//test.pass("Selected Language is "+configLanguage);
-		
-		
+				
 		GPDTag tag=new GPDTag(driver);
-		String configTag=readconfig.getTag();
+		String configTag=readconfig.getTagPS();
 		tag.SelectTag(configTag);
 		logger.info("Selected Tag is "+configTag);
 		//test.pass("Selected Tag is "+configTag);
@@ -103,12 +101,11 @@ public class TC1_GPDModel_PS_x64_Validation extends BaseClass
 		logger.info("Successfully Applied Filter Button");
 		//test.pass("Successfully Applied Filter Button");
 		
-		PS_x64_Filter ps_x64=new PS_x64_Filter(driver);
+		PS_Link_Name ps_x64=new PS_Link_Name(driver);
 		ps_x64.ValidatePSFilterResult();
 		logger.info("Successfully Validated the PS_x64_Link driver");
 		
-		
-		PSMoreDetailsLink_x64 PS_x64=new PSMoreDetailsLink_x64(driver);
+		PSMoreDetailsLink PS_x64=new PSMoreDetailsLink(driver);
 		String PSname=readconfig.getPSName();
  		PS_x64.PSMoreDetailsClick();
  		PS_x64.ValidatePSMoreDetails(PSname);

@@ -130,16 +130,35 @@ public class ReadConfig {
 		return language;
 	}
 	
-	public String getTag()
+	public String getTagGPD()
 	{
-		String tag=properties.getProperty("Tag");
-		return tag;
+		String tagGPD=properties.getProperty("TagGPD");
+		return tagGPD;
 	}
+	
+	public String getTagPS()
+	{
+		String tagPS=properties.getProperty("TagPS");
+		return tagPS;
+	}
+	public String getTagPCL()
+	{
+		String tagPCL=properties.getProperty("TagPCL");
+		return tagPCL;
+	}
+	
 	public String getPSName()
 	{
 		String Psname=properties.getProperty("PSName");
 		return Psname;
 	}
+	
+	public String getPCLName()
+	{
+		String PCLname=properties.getProperty("PCLName");
+		return PCLname;
+	}
+	
 	
 }
 
