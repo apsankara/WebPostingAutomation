@@ -60,7 +60,7 @@ public class SupportPage extends BaseClass {
 		waithelper.WaitForElement(txt_ModelSearch, 50);
 		txt_ModelSearch.clear();		
 		txt_ModelSearch.sendKeys(modelname);
-		test.pass("Model " +modelname +"Typed Successfully");
+		test.pass("Model " +modelname +" Typed Successfully");
 	}
 
 	public void BtnSearchClick() 

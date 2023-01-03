@@ -28,7 +28,7 @@ public class PCLMoreDetailsLink extends BaseClass {
 		@FindBy(xpath="//div[@class='xrx-fw-css-grid-row']//li")
 		List<WebElement> PCLDriverDetails;
 		
-	@FindBy(xpath="//h1[normalize-space()='V3 Xerox Global Print Driver PostScript']")
+	@FindBy(xpath="//h1[normalize-space()='V3 Xerox Global Print Driver PCL6']")
 	WebElement Validate_PCLMoreDestails;
 	//h1[contains(text(),'V3 Xerox Global Print Driver PostScript')]
 	
@@ -41,8 +41,8 @@ public class PCLMoreDetailsLink extends BaseClass {
 		waithelper=new WaitHelper(driver);
 	}
 
-	public void PSMoreDetailsClick() {
-		Validate_PCLMoreDestails.click();
+	public void PCLMoreDetailsClick() {
+		link_PCLMoreDetails.click();
 	}
 	
 	
@@ -78,7 +78,7 @@ public class PCLMoreDetailsLink extends BaseClass {
 			}
 	}
 	
-	public void ValidatePSMoreDetails(String name) {
+	public void ValidatePCLMoreDetails(String name) {
 		String val=Validate_PCLMoreDestails.getText();
 		if(val.contentEquals(name))
 		{

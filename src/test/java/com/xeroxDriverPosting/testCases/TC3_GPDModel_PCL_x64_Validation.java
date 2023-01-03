@@ -11,15 +11,15 @@ import com.xeroxDriverPosting.pageObject.GPDPlatform;
 import com.xeroxDriverPosting.pageObject.GPDTag;
 import com.xeroxDriverPosting.pageObject.HomePage;
 import com.xeroxDriverPosting.pageObject.ModelPage_Validation;
-import com.xeroxDriverPosting.pageObject.PSDriverDetails;
-import com.xeroxDriverPosting.pageObject.PSMoreDetailsLink;
-import com.xeroxDriverPosting.pageObject.PS_Link_Name;
+import com.xeroxDriverPosting.pageObject.PCLDriverDetails;
+import com.xeroxDriverPosting.pageObject.PCLMoreDetailsLink;
+import com.xeroxDriverPosting.pageObject.PCL_Link_Name;
 import com.xeroxDriverPosting.pageObject.SupportPage;
 import com.xeroxDriverPosting.utilities.ReadConfig;
 import com.xeroxDriverPosting.utilities.XLUtils;
 
 
-public class TC1_GPDModel_PS_x64_Validation extends BaseClass
+public class TC3_GPDModel_PCL_x64_Validation extends BaseClass
 {
 	ReadConfig readconfig=new ReadConfig();
 	
@@ -44,6 +44,7 @@ public class TC1_GPDModel_PS_x64_Validation extends BaseClass
 
 		supportpage.ModelSearchLinkClick();
 		logger.info("Model SearchLink Clicked Successfully");
+
 	}
 
 	@Test(priority=2,dependsOnMethods="supportPageModelSearchLinkClick", enabled=true)
@@ -76,7 +77,7 @@ public class TC1_GPDModel_PS_x64_Validation extends BaseClass
 	}
 	
 	@Test(priority=3,dataProvider="platformData")
-	public void OS_Language_Tag_Selection(String SelectOS) throws IOException, InterruptedException
+	public void OS_Language_Tag_Selection(String SelectOS) throws IOException
 	{
 		test=extent.createTest("OS_Language_Tag_Selection");
 		GPDPlatform platform=new GPDPlatform(driver);
@@ -92,7 +93,7 @@ public class TC1_GPDModel_PS_x64_Validation extends BaseClass
 		//test.pass("Selected Language is "+configLanguage);
 				
 		GPDTag tag=new GPDTag(driver);
-		String configTag=readconfig.getTagPS();
+		String configTag=readconfig.getTagPCL();
 		tag.SelectTag(configTag);
 		logger.info("Selected Tag is "+configTag);
 		//test.pass("Selected Tag is "+configTag);
@@ -102,53 +103,45 @@ public class TC1_GPDModel_PS_x64_Validation extends BaseClass
 		logger.info("Successfully Applied Filter Button");
 		//test.pass("Successfully Applied Filter Button");
 		
-		PS_Link_Name ps_x64=new PS_Link_Name(driver);
-		ps_x64.ValidatePSFilterResult();
-		logger.info("Successfully Validated the PS_x64_Link driver");
+		PCL_Link_Name pcl_x64=new PCL_Link_Name(driver);
+		pcl_x64.ValidatePCLFilterResult();
+		logger.info("Successfully Validated the PCL_x64_Link driver");
 		
-		PSMoreDetailsLink PS_x64=new PSMoreDetailsLink(driver);
-		String PSname=readconfig.getPSName();
- 		PS_x64.PSMoreDetailsClick();
- 		PS_x64.ValidatePSMoreDetails(PSname);
- 		logger.info("Successfully Clicked on the PS driver MorDetails" +PSname);
+		PCLMoreDetailsLink PCL_x64=new PCLMoreDetailsLink(driver);
+		String pclname=readconfig.getPCLName();
+		PCL_x64.PCLMoreDetailsClick();
+		PCL_x64.ValidatePCLMoreDetails(pclname);
  		
- 		PSDriverDetails psdriverdetails=new PSDriverDetails(driver);
+		PCLDriverDetails pcldriverdetails=new PCLDriverDetails(driver);
  		String releasedate=readconfig.getreleasedDate();
- 		psdriverdetails.Get_ReleasedDate(releasedate);
+ 		pcldriverdetails.Get_ReleasedDate(releasedate);
  		
  		String version=readconfig.getdriverVersion();
- 		psdriverdetails.Get_Version(version);
+ 		pcldriverdetails.Get_Version(version);
  		
- 		String size=readconfig.getSize_PS_x64();
- 		psdriverdetails.Get_Size(size);
+ 		String size=readconfig.getSize_PCL6_x64();
+ 		pcldriverdetails.Get_Size(size);
  		
- 		String filename=readconfig.getFileNamePS_x64();
- 		psdriverdetails.Get_Filename(filename);
+ 		String filename=readconfig.getFileNamePCL_x64();
+ 		pcldriverdetails.Get_Filename(filename);
  		
- 		String pstag=readconfig.getTagsPSName();
- 		psdriverdetails.Get_Tag(pstag);		
+ 		String pstag=readconfig.getTagsPCLName();
+ 		pcldriverdetails.Get_Tag(pstag);		
  		
  		//psdriverdetails.Get_Agree();
  		
  		//psdriverdetails.Get_Download();
- 		
  		driver.navigate().back();
  		
-
-				
-		
+ 		//String version=readconfig.getdriverVersion();
+ 						
 	}
 
 	
 	
 	
 	
-	
-	
-	
-	
-	
-	
+
 	@DataProvider(name="platformData")
 	public String[][] platformData() throws IOException
 	{

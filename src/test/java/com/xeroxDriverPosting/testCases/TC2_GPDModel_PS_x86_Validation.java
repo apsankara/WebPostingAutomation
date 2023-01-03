@@ -11,6 +11,7 @@ import com.xeroxDriverPosting.pageObject.GPDPlatform;
 import com.xeroxDriverPosting.pageObject.GPDTag;
 import com.xeroxDriverPosting.pageObject.HomePage;
 import com.xeroxDriverPosting.pageObject.ModelPage_Validation;
+import com.xeroxDriverPosting.pageObject.PSDriverDetails;
 import com.xeroxDriverPosting.pageObject.PSMoreDetailsLink;
 import com.xeroxDriverPosting.pageObject.PS_Link_Name;
 import com.xeroxDriverPosting.pageObject.SupportPage;
@@ -18,7 +19,7 @@ import com.xeroxDriverPosting.utilities.ReadConfig;
 import com.xeroxDriverPosting.utilities.XLUtils;
 
 
-public class TC1_GPDModel_PS_x86_Validation extends BaseClass
+public class TC2_GPDModel_PS_x86_Validation extends BaseClass
 {
 	ReadConfig readconfig=new ReadConfig();
 	
@@ -110,6 +111,27 @@ public class TC1_GPDModel_PS_x86_Validation extends BaseClass
 		String PSname=readconfig.getPSName();
 		PS_x86.PSMoreDetailsClick();
 		PS_x86.ValidatePSMoreDetails(PSname);
+ 		
+		
+		PSDriverDetails psdriverdetails=new PSDriverDetails(driver);
+ 		String releasedate=readconfig.getreleasedDate();
+ 		psdriverdetails.Get_ReleasedDate(releasedate);
+ 		
+ 		String version=readconfig.getdriverVersion();
+ 		psdriverdetails.Get_Version(version);
+ 		
+ 		String size=readconfig.getSize_PS_x86();
+ 		psdriverdetails.Get_Size(size);
+ 		
+ 		String filename=readconfig.getFileNamePS_x86();
+ 		psdriverdetails.Get_Filename(filename);
+ 		
+ 		String pstag=readconfig.getTagsPCLName();
+ 		psdriverdetails.Get_Tag(pstag);		
+ 		
+ 		//psdriverdetails.Get_Agree();
+ 		
+ 		//psdriverdetails.Get_Download();
  		
  		driver.navigate().back();
  		

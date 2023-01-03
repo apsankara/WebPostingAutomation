@@ -36,7 +36,6 @@ public class GPDPlatform extends BaseClass {
 		select_platform.click();
 	}	
 	
-	
 	public void selectPlatform(String platform) {
 		Select os=new Select(select_platform);
 		os.selectByVisibleText(platform);

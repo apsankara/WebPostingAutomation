@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Driver Posting">
-  <test thread-count="5" name="Global Print Driver">
+<suite name="Driver Posting Suite">
+  <test thread-count="5" name="GPD Test">
     <classes>
+      <class name="com.xeroxDriverPosting.testCases.TC2_GPDModel_PS_x86_Validation"/>
+      <class name="com.xeroxDriverPosting.testCases.TC4_GPDModel_PCL_x86_Validation"/>
+      <class name="com.xeroxDriverPosting.testCases.TC3_GPDModel_PCL_x64_Validation"/>
       <class name="com.xeroxDriverPosting.testCases.TC1_GPDModel_PS_x64_Validation"/>
     </classes>
-  </test> <!-- Global Print Driver -->
-</suite> <!-- Driver Posting -->
+  </test> <!-- GPD Test -->
+</suite> <!-- Driver Posting Suite -->

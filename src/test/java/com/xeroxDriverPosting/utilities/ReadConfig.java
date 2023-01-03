@@ -88,7 +88,7 @@ public class ReadConfig {
 		return fileNamePS_x64;
 	}
 	
-	public String getfileNamePS_x86()
+	public String getFileNamePS_x86()
 	{
 		String fileNamePS_x86=properties.getProperty("FileNamePS_x86");
 		return fileNamePS_x86;
@@ -98,6 +98,12 @@ public class ReadConfig {
 	{
 		String fileNamePCL_x64=properties.getProperty("FileNamePCL_x64");
 		return fileNamePCL_x64;
+	}
+	
+	public String getFileNamePCL_x86()
+	{
+		String fileNamePCL_x86=properties.getProperty("FileNamePCL_x86");
+		return fileNamePCL_x86;
 	}
 	
 	public String getSize_PS_x64()
@@ -158,6 +164,27 @@ public class ReadConfig {
 		String PCLname=properties.getProperty("PCLName");
 		return PCLname;
 	}
+	
+	public String getTagsPSName()
+	{
+		String TagsPSName=properties.getProperty("TagsPSName");
+		return TagsPSName;
+	}
+	
+	public String getTagsPCLName()
+	{
+		String TagsPCLName=properties.getProperty("TagsPCLName");
+		return TagsPCLName;
+	}
+	
+	public String getTgsGPDName()
+	{
+		String TagsGPDName=properties.getProperty("TagsGPDName");
+		return TagsGPDName;
+	}
+	
+	
+
 	
 	
 }

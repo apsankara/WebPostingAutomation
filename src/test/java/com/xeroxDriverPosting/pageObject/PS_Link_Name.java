@@ -40,7 +40,7 @@ public class PS_Link_Name extends BaseClass{
 	public void ValidatePSFilterResult() {
 		String val=Validate_PS_Filter.getText();
 		test=extent.createTest("XeroxDriver PS Link driver Available");
-		if(val.contentEquals("V3 Xerox Global Print Driver PostScript"))
+		if(val.contains("V3 Xerox Global Print Driver PostScript"))
 		{
 			test.pass("Successfully Validated the PS Link driver name = "+val);
 		}

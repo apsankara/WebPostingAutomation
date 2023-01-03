@@ -42,13 +42,13 @@ public class PSMoreDetailsLink extends BaseClass {
 	}
 
 	public void PSMoreDetailsClick() {
-		Validate_PSMoreDestails.click();
+		link_PSMoreDetails.click();
 	}
 	
 	
 	public void ClickPSMoreDetailsLink(String name) {
 		try {
-			test=extent.createTest("ValidatePS_x64DriverDetails");
+			test=extent.createTest("ValidatePSDriverDetails");
 			List<WebElement> PSx64bitfilename=driver.findElements(By.xpath("//div[@class='xrx-fw-css-grid-row']//li"));
 			System.out.println("No of Links Found for PdlSearchlinks: " +PSx64bitfilename.size());
 			

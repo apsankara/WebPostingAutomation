@@ -16,13 +16,14 @@ import com.xeroxDriverPosting.testCases.BaseClass;
 import com.xeroxDriverPosting.utilities.WaitHelper;
 
 
-public class PSDriverDetails extends BaseClass{
+public class PCLDriverDetails extends BaseClass{
 
 	WebDriver driver;
 	WaitHelper waithelper;
-	// PS path value without clicking the more details link
+	// PCL path value without clicking the more details link
 	@FindBy(xpath="//body[1]/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]")
 	WebElement Released;
+	
 	
 	@FindBy(xpath="//body[1]/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]")
 	WebElement Version;
@@ -43,7 +44,7 @@ public class PSDriverDetails extends BaseClass{
 	WebElement Download;
 
 	//Constructor, as every page needs a Web driver to find elements
-	public PSDriverDetails(WebDriver driver){
+	public PCLDriverDetails(WebDriver driver){
 		this.driver=driver;
 		//PageFactory.initElements(driver, this);	
 		AjaxElementLocatorFactory factory= new AjaxElementLocatorFactory(driver,50);
@@ -57,11 +58,11 @@ public class PSDriverDetails extends BaseClass{
 	
 	public void moveDown() {
 		JavascriptExecutor exe=(JavascriptExecutor)driver;
-		exe.executeScript("window.scroll(0,450)", "");
+		exe.executeScript("arguments[0].scrollIntoView(true)", Released);
 	}
 	
 	public void Get_ReleasedDate(String releasedate) throws IOException {
-		test=extent.createTest("Xerox PS Driver Details Validation");
+		test=extent.createTest("Xerox PCL Driver Details Validation");
 		waithelper.WaitForElement(Released, 20);
 		String val=Released.getText();
 		if(val.contentEquals(releasedate))
@@ -72,6 +73,7 @@ public class PSDriverDetails extends BaseClass{
 			moveDown();
 			test.fail("Released date is not successful validation " + "Expected=" + releasedate +" Actual :" +val,
 			MediaEntityBuilder.createScreenCaptureFromBase64String(screenShot()).build());
+			//BaseClass.getScreenShot(driver, val);
 		}
 	}		
 	
@@ -86,6 +88,7 @@ public class PSDriverDetails extends BaseClass{
 			moveDown();
 			test.fail("Version is not successful validation " + "Expected=" + version +" Actual :" +val,
 					MediaEntityBuilder.createScreenCaptureFromBase64String(screenShot()).build());
+			//BaseClass.getScreenShot(driver, val);
 		}
 	}	
 	
@@ -100,6 +103,7 @@ public class PSDriverDetails extends BaseClass{
 			moveDown();
 			test.fail("Size is not successful validation " + "Expected=" + size +" Actual :" +val,
 					MediaEntityBuilder.createScreenCaptureFromBase64String(screenShot()).build());	
+			//BaseClass.getScreenShot(driver, val);
 		}
 	}		
 	
@@ -114,6 +118,7 @@ public class PSDriverDetails extends BaseClass{
 			moveDown();
 			test.fail("Filename is not successful validation " + "Expected=" + filename +" Actual :" +val,
 					MediaEntityBuilder.createScreenCaptureFromBase64String(screenShot()).build());	
+			//BaseClass.getScreenShot(driver, val);
 		}
 	}		
 	
@@ -128,6 +133,7 @@ public class PSDriverDetails extends BaseClass{
 			moveDown();
 			test.fail("Tag is not successful validation " + "Expected=" + tag +" Actual :" +val,
 					MediaEntityBuilder.createScreenCaptureFromBase64String(screenShot()).build());
+			//BaseClass.getScreenShot(driver, val);
 		}
 	}		
 	

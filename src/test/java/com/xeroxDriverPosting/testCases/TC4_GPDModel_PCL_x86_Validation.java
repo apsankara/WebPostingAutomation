@@ -11,6 +11,7 @@ import com.xeroxDriverPosting.pageObject.GPDPlatform;
 import com.xeroxDriverPosting.pageObject.GPDTag;
 import com.xeroxDriverPosting.pageObject.HomePage;
 import com.xeroxDriverPosting.pageObject.ModelPage_Validation;
+import com.xeroxDriverPosting.pageObject.PCLDriverDetails;
 import com.xeroxDriverPosting.pageObject.PCLMoreDetailsLink;
 import com.xeroxDriverPosting.pageObject.PCL_Link_Name;
 import com.xeroxDriverPosting.pageObject.SupportPage;
@@ -18,7 +19,7 @@ import com.xeroxDriverPosting.utilities.ReadConfig;
 import com.xeroxDriverPosting.utilities.XLUtils;
 
 
-public class TC1_GPDModel_PCL_x64_Validation extends BaseClass
+public class TC4_GPDModel_PCL_x86_Validation extends BaseClass
 {
 	ReadConfig readconfig=new ReadConfig();
 	
@@ -90,8 +91,7 @@ public class TC1_GPDModel_PCL_x64_Validation extends BaseClass
 		language.SelectLanguage(configLanguage);
 		logger.info("Selected Language is "+configLanguage);
 		//test.pass("Selected Language is "+configLanguage);
-		
-		
+				
 		GPDTag tag=new GPDTag(driver);
 		String configTag=readconfig.getTagPCL();
 		tag.SelectTag(configTag);
@@ -103,22 +103,40 @@ public class TC1_GPDModel_PCL_x64_Validation extends BaseClass
 		logger.info("Successfully Applied Filter Button");
 		//test.pass("Successfully Applied Filter Button");
 		
-		PCL_Link_Name pcl_x64=new PCL_Link_Name(driver);
-		pcl_x64.ValidatePCLFilterResult();
+		PCL_Link_Name pcl_x86=new PCL_Link_Name(driver);
+		pcl_x86.ValidatePCLFilterResult();
 		logger.info("Successfully Validated the PCL_x64_Link driver");
 		
-		PCLMoreDetailsLink PCL_x64=new PCLMoreDetailsLink(driver);
+		PCLMoreDetailsLink PCL_x86=new PCLMoreDetailsLink(driver);
 		String pclname=readconfig.getPCLName();
-		PCL_x64.PSMoreDetailsClick();
-		PCL_x64.ValidatePSMoreDetails(pclname);
+		PCL_x86.PCLMoreDetailsClick();
+		PCL_x86.ValidatePCLMoreDetails(pclname);
+ 		
+		PCLDriverDetails pcldriverdetails=new PCLDriverDetails(driver);
+ 		String releasedate=readconfig.getreleasedDate();
+ 		pcldriverdetails.Get_ReleasedDate(releasedate);
+ 		
+ 		String version=readconfig.getdriverVersion();
+ 		pcldriverdetails.Get_Version(version);
+ 		
+ 		String size=readconfig.getSize_PCL6_x86();
+ 		pcldriverdetails.Get_Size(size);
+ 		
+ 		String filename=readconfig.getFileNamePCL_x86();
+ 		pcldriverdetails.Get_Filename(filename);
+ 		
+ 		String PCLtag=readconfig.getTagsPCLName();
+ 		pcldriverdetails.Get_Tag(PCLtag);		
+ 		
+ 		//PCLdriverdetails.Get_Agree();
+ 		
+ 		//PCLdriverdetails.Get_Download();
  		
  		driver.navigate().back();
  		
- 		//String version=readconfig.getdriverVersion();
  						
 	}
 
-	
 	
 	
 	
@@ -127,8 +145,8 @@ public class TC1_GPDModel_PCL_x64_Validation extends BaseClass
 	public String[][] platformData() throws IOException
 	{
 		String path=System.getProperty("user.dir")+"/src/test/java/com/xeroxDriverPosting/testData/TestData.xlsx";
-		int rowcount=XLUtils.getRowCount(path, "Platform_x64");
-		int colcount=XLUtils.getCellCount(path, "Platform_x64", 1);
+		int rowcount=XLUtils.getRowCount(path, "Platform_x86");
+		int colcount=XLUtils.getCellCount(path, "Platform_x86", 1);
 		
 		String platformData[][]=new String[rowcount][colcount];
 		
@@ -137,7 +155,7 @@ public class TC1_GPDModel_PCL_x64_Validation extends BaseClass
 			for(int j=0;j<colcount;j++)
 			{
 				
-				platformData[i-1][j]=XLUtils.getCellData(path, "Platform_x64", i, j);//values start from 1 0
+				platformData[i-1][j]=XLUtils.getCellData(path, "Platform_x86", i, j);//values start from 1 0
 				
 			}
 		}
