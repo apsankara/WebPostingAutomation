@@ -39,7 +39,7 @@ public class PCL_Link_Name extends BaseClass{
 	
 	public void ValidatePCLFilterResult() {
 		String val=Validate_PCL_Filter.getText();
-		test=extent.createTest("XeroxDriver PCL Link driver Available");
+		//test=extent.createTest("XeroxDriver PCL Link driver Available");
 		if(val.contains("V3 Xerox Global Print Driver PCL6"))
 		{
 			test.pass("Successfully Validated the PCL Link driver name = "+val);

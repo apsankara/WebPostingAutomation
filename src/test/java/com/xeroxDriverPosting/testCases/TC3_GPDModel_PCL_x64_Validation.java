@@ -79,7 +79,7 @@ public class TC3_GPDModel_PCL_x64_Validation extends BaseClass
 	@Test(priority=3,dataProvider="platformData")
 	public void OS_Language_Tag_Selection(String SelectOS) throws IOException
 	{
-		test=extent.createTest("OS_Language_Tag_Selection");
+		test=extent.createTest("OS_x64_Language_PCLTag_Selection");
 		GPDPlatform platform=new GPDPlatform(driver);
 		platform.clickPlatform();
 		platform.selectPlatform(SelectOS);

@@ -78,7 +78,7 @@ public class TC1_GPDModel_PS_x64_Validation extends BaseClass
 	@Test(priority=3,dataProvider="platformData")
 	public void OS_Language_Tag_Selection(String SelectOS) throws IOException, InterruptedException
 	{
-		test=extent.createTest("OS_Language_Tag_Selection");
+		test=extent.createTest("OS_x64_Language_PSTag_Selection");
 		GPDPlatform platform=new GPDPlatform(driver);
 		platform.clickPlatform();
 		platform.selectPlatform(SelectOS);

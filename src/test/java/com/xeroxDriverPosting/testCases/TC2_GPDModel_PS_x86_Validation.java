@@ -79,7 +79,7 @@ public class TC2_GPDModel_PS_x86_Validation extends BaseClass
 	@Test(priority=3,dataProvider="platformData")
 	public void OS_Language_Tag_Selection(String SelectOS) throws IOException
 	{
-		test=extent.createTest("OS_Language_Tag_Selection");
+		test=extent.createTest("OS_x86_Language_PSTag_Selection");
 		GPDPlatform platform=new GPDPlatform(driver);
 		platform.clickPlatform();
 		platform.selectPlatform(SelectOS);
@@ -105,7 +105,7 @@ public class TC2_GPDModel_PS_x86_Validation extends BaseClass
 		
 		PS_Link_Name ps_x86=new PS_Link_Name(driver);
 		ps_x86.ValidatePSFilterResult();
-		logger.info("Successfully Validated the PS Link driver");		
+		logger.info("Successfully Validated the PS_x86 Link driver");		
 		
 		PSMoreDetailsLink PS_x86=new PSMoreDetailsLink(driver);
 		String PSname=readconfig.getPSName();
@@ -126,7 +126,7 @@ public class TC2_GPDModel_PS_x86_Validation extends BaseClass
  		String filename=readconfig.getFileNamePS_x86();
  		psdriverdetails.Get_Filename(filename);
  		
- 		String pstag=readconfig.getTagsPCLName();
+ 		String pstag=readconfig.getTagsPSName();
  		psdriverdetails.Get_Tag(pstag);		
  		
  		//psdriverdetails.Get_Agree();
