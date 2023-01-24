@@ -1,0 +1,10 @@
+<settings>
+<proxies>
+    <proxy>
+      <protocol>http</protocol>
+      <host>www.mc.xerox.com</host>
+      <port>8000</port>
+      <nonProxyHosts>local.net|some.host.com</nonProxyHosts>
+    </proxy>
+</proxies>
+</settings>
